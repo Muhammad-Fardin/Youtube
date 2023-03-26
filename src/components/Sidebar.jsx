@@ -23,18 +23,19 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`md:block w-[240px] overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${
-        mobileMenu ? "translate-x-0" : ""
-      }`}
-    >
-<div className="flex px-5 flex-col">
+            className={`md:block w-[240px] overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${
+                mobileMenu ? "translate-x-0" : ""
+            }`}
+        >
+            <div className="flex px-5 flex-col">
                 {categories.map((item) => {
                     return (
-                        <React.Fragment key={item.name}>
+                        <div key={item.name}>
                             <SidebarItems
                                 text={item.type === "home" ? "Home" : item.name}
                                 icon={item.icon}
                                 action={() => {
+                                    console.log('clicked')
                                     clickHandler(item.name, item.type);
                                     navigate("/");
                                 }}
@@ -47,16 +48,16 @@ const Sidebar = () => {
                             {item.divider && (
                                 <hr className="my-5 border-white/[0.2]" />
                             )}
-                        </React.Fragment>
+                        </div>
                     );
                 })}
                 <hr className="my-5 border-white/[0.2]" />
                 <div className="text-white/[0.5] text-[12px]">
-                    Clone by: JS Dev Hindi
+                    Clone Created by: Muhammad Fardin
                 </div>
             </div>
-    </div>
-  );
+        </div>
+    );
 };
 
 export default Sidebar;

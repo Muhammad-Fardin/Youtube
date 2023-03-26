@@ -7,7 +7,7 @@ import {
   Sidebar,
   VideoDetails,
 } from "./components/index";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   useEffect(() => {
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <AppContext>
-      <BrowserRouter>
+      <HashRouter>
         <div className="flex flex-col h-full">
           <Header />
           <Routes>
@@ -30,7 +30,7 @@ function App() {
             <Route path="/video/:id" element={<VideoDetails />} />
           </Routes>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </AppContext>
   );
 }

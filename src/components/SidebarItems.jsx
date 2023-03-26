@@ -1,6 +1,7 @@
 import React from 'react'
 
 const SidebarItems = ({text, icon, className, action}) => {
+
     return (
         <div
             className={

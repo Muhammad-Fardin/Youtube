@@ -18,21 +18,21 @@ const Header = () => {
   const navigate = useNavigate();
   const { loading, mobileMenu, setMobileMenu } = useContext(Context);
 
-  const searchQueryHandler = (e) => {
+  const searchQueryHandler = (event) => {
     if (
-      (e.key === "Enter" || e === "searchButton") &&
-      searchQuery?.length > 0
+        (event?.key === "Enter" || event === "searchButton") &&
+        searchQuery?.length > 0
     ) {
-      navigate(`/searchResult/${searchQuery}`);
+        navigate(`/searchResult/${searchQuery}`);
     }
-  };
+};
 
-  const mobileMenuToggle = () => {
+const mobileMenuToggle = () => {
     setMobileMenu(!mobileMenu);
-  };
+};
 
-  const { pathname } = useLocation();
-  const pageName = pathname?.split("/")?.filter(Boolean)?.[0];
+const { pathname } = useLocation();
+const pageName = pathname?.split("/")?.filter(Boolean)?.[0];
 
   return (
     <div className="sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-white dark:bg-black">
