@@ -95,9 +95,3 @@ body {
          height: 100vh !important;
      }
  }
-
- @media screen and (min-width: 300px) and (max-width: 768px) {
-    .mobile-menu {
-        width: 1;
-    }
- }
